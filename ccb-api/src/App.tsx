@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import * as hymnService from "./services/hymn-service";
 import { Hymn } from "./models/Hymn";
@@ -10,6 +10,17 @@ function App() {
 
   const [hymnNumber, setHymnNumber] = useState<number>(0);
   const [hymn, setHymn] = useState<Hymn>();
+
+  useEffect(() => {
+    hymnService
+      .findById(hymnNumber)
+      .then((response) => {
+        setHymn(response.data);
+      })
+      .catch(() => {
+        setHymn(undefined);
+      });
+  }, [hymnNumber]);
 
   return (
     <>
