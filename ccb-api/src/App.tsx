@@ -37,7 +37,6 @@ function App() {
               max={maxValue}
               onChange={handleInputChange}
             />
-            <button onClick={HandleButtonSearch}>Buscar</button>
           </form>
         </section>
       </main>
@@ -50,19 +49,6 @@ function App() {
 
   function handleInputChange(event: any) {
     setHymnNumber(event.target.value);
-  }
-
-  function HandleButtonSearch(event: any) {
-    event.preventDefault();
-
-    hymnService
-      .findById(hymnNumber)
-      .then((response) => {
-        setHymn(response.data);
-      })
-      .catch(() => {
-        setHymn(undefined);
-      });
   }
 }
 
