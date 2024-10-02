@@ -26,7 +26,7 @@ function App() {
     <>
       
       <main>
-        <h1>CCB API</h1>
+        <h1>Hinário CCB</h1>
         <section>
           <form className="hymnForm">
             <label>Digite o número do hino</label>
@@ -40,11 +40,10 @@ function App() {
             />
           </form>
         </section>
-      </main>
-
-      <section className="result-section">
+        <section className="result-section">
         {hymn && <HymnDetails hymn={hymn} />}
       </section>
+      </main>
     </>
   );
 
