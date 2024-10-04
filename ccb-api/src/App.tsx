@@ -10,15 +10,20 @@ function App() {
 
   const [hymnNumber, setHymnNumber] = useState<number>(0);
   const [hymn, setHymn] = useState<Hymn>();
+  const [message, setMessage] = useState<string>(""); 
 
   useEffect(() => {
     hymnService
       .findById(hymnNumber)
       .then((response) => {
         setHymn(response.data);
+        setMessage("");
       })
       .catch(() => {
-        setHymn(undefined);
+        if(hymnNumber >= minValue && hymnNumber <= maxValue) {
+          setHymn(undefined);
+          setMessage("Hino não encontrado");
+        }
       });
   }, [hymnNumber]);
 
@@ -38,9 +43,10 @@ function App() {
               max={maxValue}
               onChange={handleInputChange}
             />
+            <h2>{message}</h2>
           </form>
         </section>
-        <section className="result-section">
+        <section id="result-section" className="result-section">
         {hymn && <HymnDetails hymn={hymn} />}
       </section>
       </main>
