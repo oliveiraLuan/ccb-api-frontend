@@ -35,3 +35,7 @@ main{
   max-width: 80vw;
   white-space: pre-line;
 }
+
+.result-section:empty{
+  border: none;
+}
