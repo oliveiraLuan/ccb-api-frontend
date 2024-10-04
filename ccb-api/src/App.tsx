@@ -20,9 +20,12 @@ function App() {
         setMessage("");
       })
       .catch(() => {
-        if(hymnNumber >= minValue && hymnNumber <= maxValue) {
+        if(isValidHymn(hymnNumber)) {
           setHymn(undefined);
           setMessage("Hino não encontrado");
+        } else {
+          setHymn(undefined);
+          setMessage("Digite um hino entre 1 e 480");
         }
       });
   }, [hymnNumber]);
@@ -34,7 +37,6 @@ function App() {
         <h1>Hinário CCB</h1>
         <section>
           <form className="hymnForm">
-            <label>Digite o número do hino</label>
             <input
               inputMode="numeric"
               name="hymnNumber"
@@ -55,6 +57,13 @@ function App() {
 
   function handleInputChange(event: any) {
     setHymnNumber(event.target.value);
+  }
+
+  function isValidHymn(hymnNumber : number){
+    if(hymnNumber >= minValue && hymnNumber <= maxValue) {
+        return true;
+    }
+    return false;
   }
 }
 
