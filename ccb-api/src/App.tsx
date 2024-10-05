@@ -3,6 +3,7 @@ import "./App.css";
 import * as hymnService from "./services/hymn-service";
 import { Hymn } from "./models/Hymn";
 import { HymnDetails } from "./components/HymnDetails";
+import logo from "../public/logoccb.png";
 
 function App() {
   const minValue = 1;
@@ -34,7 +35,7 @@ function App() {
     <>
       
       <main>
-        <h1>Hinário CCB</h1>
+        <img className="logo" src={logo} alt="Logo CCB" />
         <section>
           <form className="hymnForm">
             <input

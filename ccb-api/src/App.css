@@ -40,3 +40,9 @@ main{
 .result-section:empty{
   border: none;
 }
+
+.logo{
+  width: 284px;
+  height: 144px;
+  margin: 10px;
+}
