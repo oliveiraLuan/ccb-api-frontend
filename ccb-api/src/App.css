@@ -34,6 +34,7 @@ main{
   padding: 10px;
   max-width: 80vw;
   white-space: pre-line;
+  margin-bottom: 10px;
 }
 
 .result-section:empty{
