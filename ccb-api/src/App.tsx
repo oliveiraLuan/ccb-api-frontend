@@ -3,7 +3,7 @@ import "./App.css";
 import * as hymnService from "./services/hymn-service";
 import { Hymn } from "./models/Hymn";
 import { HymnDetails } from "./components/HymnDetails";
-import logo from "../public/logoccb.png";
+import logo from "../src/assets/logoccb.png";
 
 function App() {
   const minValue = 1;
@@ -36,6 +36,7 @@ function App() {
       
       <main>
         <img className="logo" src={logo} alt="Logo CCB" />
+        <h2>{message}</h2>
         <section>
           <form className="hymnForm">
             <input
@@ -46,7 +47,7 @@ function App() {
               max={maxValue}
               onChange={handleInputChange}
             />
-            <h2>{message}</h2>
+            
           </form>
         </section>
         <section id="result-section" className="result-section">
