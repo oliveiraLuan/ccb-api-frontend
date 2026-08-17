@@ -4,7 +4,7 @@ export type HymnDetails = {
     hymn: Hymn
 }
 
-export function HymnDetails({ hymn }){
+export function HymnDetails({ hymn }: HymnDetails) {
     return <>
         <div>
             <h2>Título: {hymn.title}</h2>

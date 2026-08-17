@@ -3,7 +3,7 @@ import "./App.css";
 import * as hymnService from "./services/hymn-service";
 import { Hymn } from "./models/Hymn";
 import { HymnDetails } from "./components/HymnDetails";
-import logo from "../src/assets/logoccb.png";
+import logo from "../public/logoccb.png";
 
 function App() {
   const minValue = 1;
