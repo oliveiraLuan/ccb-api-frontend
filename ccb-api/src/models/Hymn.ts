@@ -1,8 +1,8 @@
-import { Songwriter } from "./Songwriter"
+import { Author } from "./Author"
 
 export type Hymn = {
     number: number,
     title: string,
     lyrics: string
-    songwriter: Songwriter
+    author: Author
 }
